@@ -222,6 +222,21 @@ extension JavaScriptRuntime {
     // callbacks. The runtime is read on the JavaScript thread and passed to the closure.
 
     @inline(__always)
+    /// Schedules the release of a value's state from its `deinit`. On the JavaScript thread, it schedules
+    /// from another thread: React Native's scheduler destroys its queued tasks while it holds the mutex
+    /// that scheduling takes, when a JavaScript error clears the queues, so a value dropped with a task
+    /// would deadlock the JavaScript thread if it scheduled from there. The release stays a queued task,
+    /// so it runs after a resolve or call that is already queued.
+    internal func scheduleRelease(_ body: @escaping @JavaScriptActor (JavaScriptRuntime) -> Void) {
+      guard supportsAsyncScheduling && isOnJavaScriptThread() else {
+        schedule(body)
+        return
+      }
+      DispatchQueue.global(qos: .utility).async {
+        self.schedule(body)
+      }
+    }
+
     internal func schedule(
       priority: JavaScriptRuntime.SchedulerPriority = .normal,
       _ body: @escaping @JavaScriptActor (JavaScriptRuntime) -> Void
