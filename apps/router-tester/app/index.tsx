@@ -42,6 +42,7 @@ const HomeIndex = () => {
       <CaseLink href="/navigation-aware-activity" text="Navigation Aware Activity" />
       <CaseLink href="/drawer" text="Drawer" />
       <CaseLink href="/drawer-open" text="Drawer (default open)" />
+      <CaseLink href="/can-go-back" text="Can Go Back" />
       <Pressable
         accessibilityRole="button"
         accessibilityLabel="Error boundaries"
