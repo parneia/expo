@@ -43,7 +43,7 @@ export async function readBaseVersionAsync(baseRef: string, packageName: string)
   return JSON.parse(manifest).version;
 }
 
-const npmPackAsync: NpmPack = async (spec, destination) => {
+export const npmPackAsync: NpmPack = async (spec, destination) => {
   try {
     const { stdout } = await spawnAsync('npm', [
       'pack',
