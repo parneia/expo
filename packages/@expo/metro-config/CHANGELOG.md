@@ -1,5 +1,12 @@
 # Changelog
 
+## 58.0.16
+
+### Patch Changes
+
+- Fix Babel transforms using the process `BABEL_ENV` instead of the bundle's mode. ([#51872](https://github.com/expo/expo/pull/51872) by [@ramonclaudio](https://github.com/ramonclaudio))
+- Add asset transformer through noxcturnal for `experiments.noxcturnalTransformWorker` ([#51714](https://github.com/expo/expo/pull/51714) by [@kitten](https://github.com/kitten))
+
 ## 58.0.15
 
 ### Patch Changes

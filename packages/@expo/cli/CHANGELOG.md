@@ -1,5 +1,16 @@
 # Changelog
 
+## 58.1.14
+
+### Patch Changes
+
+- Fix native builds from `expo run:android` and `expo run:ios` bundling with the CLI's development `BABEL_ENV`. `BABEL_ENV` now always follows the command's mode, even when it's already set. ([#51872](https://github.com/expo/expo/pull/51872) by [@ramonclaudio](https://github.com/ramonclaudio))
+- Updated dependencies. ([#51868](https://github.com/expo/expo/pull/51868), [#51872](https://github.com/expo/expo/pull/51872), [#51714](https://github.com/expo/expo/pull/51714))
+  - @expo/log-box@58.0.13
+  - @expo/metro-config@58.0.16
+  - @expo/prebuild-config@58.0.15
+  - @expo/router-server@58.0.16
+
 ## 58.1.13
 
 ### Patch Changes

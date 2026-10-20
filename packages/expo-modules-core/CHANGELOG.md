@@ -1,5 +1,14 @@
 # Changelog
 
+## 58.0.24
+
+### Patch Changes
+
+- [iOS] Reduce the overhead of creating shared objects in JavaScript and of returning them from native functions. ([#51730](https://github.com/expo/expo/pull/51730) by [@tsapeta](https://github.com/tsapeta))
+- [iOS] Fix shared objects that native code returns to JavaScript again after their earlier JavaScript object was garbage-collected. Their members could throw "Unable to find the native shared object associated with given JavaScript object", or the returned object could belong to another shared object. ([#51854](https://github.com/expo/expo/pull/51854) by [@tsapeta](https://github.com/tsapeta))
+- Updated dependencies. ([#51588](https://github.com/expo/expo/pull/51588))
+  - expo-modules-jsi@58.0.17
+
 ## 58.0.23
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # Changelog
 
+## 58.0.17
+
+### Patch Changes
+
+- [iOS] Build `ExpoModulesJSI` during the Xcode build of a Swift Package Manager app, against the app's React Native. Expo source packages compile against the `ExpoModulesJSIHeaders` XCFramework that `expo-modules-jsi` ships, and the new "Build ExpoModulesJSI" build phase runs a script in `expo-modules-jsi` that builds, links and embeds the framework.
+
+  The build phase copies the framework's dSYM to the app's dSYM folder, so archives symbolicate `ExpoModulesJSI` crashes.
+
+  Sync fails with an error that names both versions when the `ExpoModulesJSIHeaders` XCFramework comes from another version of `expo-modules-jsi` than the installed sources.
+
+  ([#51588](https://github.com/expo/expo/pull/51588) by [@chrfalch](https://github.com/chrfalch))
+
+- Updated dependencies. ([#50388](https://github.com/expo/expo/pull/50388), [#51872](https://github.com/expo/expo/pull/51872), [#51730](https://github.com/expo/expo/pull/51730), [#51854](https://github.com/expo/expo/pull/51854), [#51868](https://github.com/expo/expo/pull/51868), [#51714](https://github.com/expo/expo/pull/51714))
+  - expo-modules-autolinking@58.0.14
+  - @expo/cli@58.1.14
+  - expo-modules-core@58.0.24
+  - @expo/log-box@58.0.13
+  - @expo/metro-config@58.0.16
+  - babel-preset-expo@58.0.19
+
 ## 58.0.16
 
 ### Patch Changes

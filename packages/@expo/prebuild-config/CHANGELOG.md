@@ -1,5 +1,12 @@
 # Changelog
 
+## 58.0.15
+
+### Patch Changes
+
+- Updated dependencies. ([#50388](https://github.com/expo/expo/pull/50388))
+  - expo-modules-autolinking@58.0.14
+
 ## 58.0.14
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # Changelog
 
+## 58.0.22
+
+### Patch Changes
+
+- [Android] Add `colorOverrides` to the Jetpack Compose `Host`. It replaces individual Material 3 color roles in the palette from `colorScheme` and `seedColor`. Compose children and `useMaterialColors()` use the result. ([#51650](https://github.com/expo/expo/pull/51650) by [@juliusmarminge](https://github.com/juliusmarminge))
+- [iOS] Lay out children of a horizontal universal `ScrollView` in a row. They were stacked vertically. ([#51888](https://github.com/expo/expo/pull/51888) by [@itisrmk](https://github.com/itisrmk))
+- [iOS] Add `accessibilityLabel` to the community `SegmentedControl`, so screen readers announce a name for the control. ([#51899](https://github.com/expo/expo/pull/51899) by [@expo-tuft](https://github.com/apps/expo-tuft))
+- [iOS] Support `tintColor` in the community `SegmentedControl`. ([#51904](https://github.com/expo/expo/pull/51904) by [@expo-tuft](https://github.com/apps/expo-tuft))
+- [Android] Add the Jetpack Compose `TopAppBar` component with `TopAppBar.Title`, `TopAppBar.NavigationIcon`, and `TopAppBar.Actions` slots, `colors`, and `windowInsets`. ([#51651](https://github.com/expo/expo/pull/51651) by [@juliusmarminge](https://github.com/juliusmarminge))
+- [web] Fix the universal `Text` ignoring the `colorScheme` of its `Host`. Its default color followed the browser color scheme, so a `Text` in a dark `Host` was black in a light browser. It now uses the `Host` foreground color and keeps the old color when no `Host` is on the page. A light `Host` now also gets the light colors when the browser or an outer `Host` is dark. ([#51698](https://github.com/expo/expo/pull/51698) by [@expo-bot](https://github.com/expo-bot))
+- Fix bottom sheet modals closing on iOS when the snap point count changes. ([#51889](https://github.com/expo/expo/pull/51889) by [@Fizzbow](https://github.com/Fizzbow))
+- [iOS] Stop the community `PagerView` from pressing a `Pressable` on a page when a swipe starts or ends on it, or when a tap stops a moving page. The pager now takes the touch from its pages while it scrolls, like React Native's `ScrollView`. This needs iOS 18 or later. ([#51799](https://github.com/expo/expo/pull/51799) by [@julian-gargicevich](https://github.com/julian-gargicevich))
+- [Web] Put a labeled `Switch` at the trailing edge of its row, as on Android and iOS. ([#51867](https://github.com/expo/expo/pull/51867) by [@miniware9](https://github.com/miniware9))
+
 ## 58.0.21
 
 ### Patch Changes
