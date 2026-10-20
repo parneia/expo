@@ -43,6 +43,7 @@ const HomeIndex = () => {
       <CaseLink href="/drawer" text="Drawer" />
       <CaseLink href="/drawer-open" text="Drawer (default open)" />
       <CaseLink href="/can-go-back" text="Can Go Back" />
+      <CaseLink href="/can-dismiss" text="Can Dismiss" />
       <Pressable
         accessibilityRole="button"
         accessibilityLabel="Error boundaries"
